@@ -118,7 +118,7 @@ print_done "RevenueCat MCP added"
 print_info "Set your key: claude mcp update revenuecat --header 'Authorization: Bearer YOUR_KEY'"
 
 print_installing "PostHog MCP (analytics, feature flags)"
-npx @posthog/wizard@latest mcp add 2>/dev/null || true
+claude mcp add --transport http posthog https://mcp.posthog.com/sse 2>/dev/null || true
 print_done "PostHog MCP added"
 
 print_installing "Gemini MCP (image gen, video gen, web search)"
