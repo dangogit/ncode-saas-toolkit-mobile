@@ -1,4 +1,4 @@
-# saas-toolkit-mobile
+# ncode-saas-toolkit-mobile
 
 Mobile development track extension for Claude Code. Part of the nCode course by Daniel Goldman.
 
@@ -6,10 +6,10 @@ Mobile development track extension for Claude Code. Part of the nCode course by 
 
 ```bash
 # Requires base plugin first
-claude plugin add dangogit/saas-toolkit
+claude plugin add dangogit/ncode-saas-toolkit
 
 # Then install mobile extension
-claude plugin add dangogit/saas-toolkit-mobile
+claude plugin add dangogit/ncode-saas-toolkit-mobile
 ```
 
 ## What's Included

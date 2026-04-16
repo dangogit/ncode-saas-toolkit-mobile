@@ -1,6 +1,6 @@
-# saas-toolkit-mobile
+# ncode-saas-toolkit-mobile
 
-Mobile development track extension for saas-toolkit. Part of the nCode course ecosystem.
+Mobile development track extension for ncode-saas-toolkit. Part of the nCode course ecosystem.
 
 ## Stack
 
@@ -20,4 +20,4 @@ Default auth providers are Google and Apple sign-in via Firebase Auth. Apple sig
 
 ## Requires
 
-Base plugin: `dangogit/saas-toolkit`
+Base plugin: `dangogit/ncode-saas-toolkit`

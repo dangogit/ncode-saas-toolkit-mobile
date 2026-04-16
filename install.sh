@@ -1,9 +1,9 @@
 #!/usr/bin/env bash
-# nCode saas-toolkit-mobile Installer
-# https://github.com/dangogit/saas-toolkit-mobile
+# nCode ncode-saas-toolkit-mobile Installer
+# https://github.com/dangogit/ncode-saas-toolkit-mobile
 #
 # Installs the mobile track plugin + all marketplace skills + MCP servers.
-# Run the base installer first: danielthegoldman.com/saas-toolkit/install.sh
+# Run the base installer first: danielthegoldman.com/ncode-saas-toolkit/install.sh
 
 # -----------------------------------------
 # Colors & helpers
@@ -40,9 +40,9 @@ echo -e "${BOLD}${CYAN}|  React Native + Expo + Firebase + Gemini        |${RESE
 echo -e "${BOLD}${CYAN}+================================================+${RESET}"
 echo ""
 echo -e "  This installer will set up:"
-echo -e "  ${GREEN}+${RESET} saas-toolkit-mobile plugin (4 custom skills)"
+echo -e "  ${GREEN}+${RESET} ncode-saas-toolkit-mobile plugin (4 custom skills)"
 echo -e "  ${GREEN}+${RESET} 8 marketplace skills (Firebase, Expo, ASO, PostHog)"
-echo -e "  ${GREEN}+${RESET} 5 MCP servers (Firebase, Expo, RevenueCat, PostHog, Gemini)"
+echo -e "  ${GREEN}+${RESET} 6 MCP servers (Firebase, Expo, RevenueCat, PostHog, Gemini, Snyk)"
 echo ""
 read -r -p "  Press Enter to continue, or Ctrl+C to cancel... "
 
@@ -51,10 +51,10 @@ read -r -p "  Press Enter to continue, or Ctrl+C to cancel... "
 # =========================================
 
 print_step "Installing mobile track plugin"
-print_installing "dangogit/saas-toolkit-mobile"
-claude plugin add dangogit/saas-toolkit-mobile 2>/dev/null && \
-  print_done "saas-toolkit-mobile installed" || \
-  print_done "saas-toolkit-mobile already installed"
+print_installing "dangogit/ncode-saas-toolkit-mobile"
+claude plugin add dangogit/ncode-saas-toolkit-mobile 2>/dev/null && \
+  print_done "ncode-saas-toolkit-mobile installed" || \
+  print_done "ncode-saas-toolkit-mobile already installed"
 
 # =========================================
 # MARKETPLACE SKILLS
@@ -98,6 +98,14 @@ print_installing "PostHog analytics"
 npx skills add alinaqi/claude-bootstrap@posthog-analytics -g -y 2>/dev/null
 print_done "posthog-analytics"
 
+print_installing "OWASP security check (Section 8 - Pro Topics)"
+npx skills add alinaqi/claude-bootstrap@owasp-security-check -g -y 2>/dev/null
+print_done "owasp-security-check"
+
+print_installing "Clean code practices"
+npx skills add alinaqi/claude-bootstrap@clean-code -g -y 2>/dev/null
+print_done "clean-code"
+
 # =========================================
 # MCP SERVERS
 # =========================================
@@ -126,6 +134,11 @@ claude mcp add gemini -s user -- npx -y @rlabs-inc/gemini-mcp 2>/dev/null
 print_done "Gemini MCP added"
 print_info "Set your key: claude mcp update gemini -e GEMINI_API_KEY=your_key"
 
+print_installing "Snyk MCP (security scanning: code + dependencies + IaC)"
+claude mcp add snyk -s user -- npx -y snyk@latest mcp 2>/dev/null
+print_done "Snyk MCP added"
+print_info "Authenticate with: run 'snyk auth' in terminal (free tier sufficient)"
+
 # -----------------------------------------
 # Done!
 # -----------------------------------------
@@ -135,9 +148,9 @@ echo -e "${BOLD}${GREEN}|        Mobile track ready!                      |${RES
 echo -e "${BOLD}${GREEN}+================================================+${RESET}"
 echo ""
 echo -e "  ${BOLD}What was installed:${RESET}"
-echo -e "  saas-toolkit-mobile plugin"
+echo -e "  ncode-saas-toolkit-mobile plugin"
 echo -e "  8 marketplace skills (Firebase, Expo, ASO, PostHog)"
-echo -e "  5 MCP servers (Firebase, Expo, RevenueCat, PostHog, Gemini)"
+echo -e "  6 MCP servers (Firebase, Expo, RevenueCat, PostHog, Gemini, Snyk)"
 echo ""
 echo -e "  ${BOLD}API keys to configure:${RESET}"
 echo -e "  ${CYAN}1.${RESET} Firebase:    run ${BOLD}firebase login${RESET} to authenticate"
