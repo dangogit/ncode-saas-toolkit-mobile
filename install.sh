@@ -44,7 +44,6 @@ echo -e "  ${GREEN}+${RESET} ncode-saas-toolkit-mobile plugin (4 custom skills)"
 echo -e "  ${GREEN}+${RESET} 8 marketplace skills (Firebase, Expo, ASO, PostHog)"
 echo -e "  ${GREEN}+${RESET} 6 MCP servers (Firebase, Expo, RevenueCat, PostHog, Gemini, Snyk)"
 echo ""
-read -r -p "  Press Enter to continue, or Ctrl+C to cancel... "
 
 # =========================================
 # PLUGIN
