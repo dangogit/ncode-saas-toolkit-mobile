@@ -1,0 +1,21 @@
+{
+  "name": "ncode-saas-toolkit-mobile",
+  "owner": {
+    "name": "Daniel Goldman",
+    "url": "https://danielthegoldman.com"
+  },
+  "metadata": {
+    "description": "nCode Mobile track - React Native + Expo + Firebase + Gemini",
+    "version": "4.0.0"
+  },
+  "plugins": [
+    {
+      "name": "ncode-saas-toolkit-mobile",
+      "source": "./plugins/ncode-saas-toolkit-mobile",
+      "description": "Mobile development track: Expo, Firebase, Vertex AI, RevenueCat, Codemagic",
+      "version": "4.0.0",
+      "category": "development",
+      "tags": ["saas", "ncode", "react-native", "expo", "firebase", "mobile"]
+    }
+  ]
+}

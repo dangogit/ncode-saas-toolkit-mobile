@@ -50,8 +50,10 @@ echo ""
 # =========================================
 
 print_step "Installing mobile track plugin"
-print_installing "dangogit/ncode-saas-toolkit-mobile"
-claude plugin add dangogit/ncode-saas-toolkit-mobile 2>/dev/null && \
+print_installing "Adding marketplace: dangogit/ncode-saas-toolkit-mobile"
+claude plugin marketplace add https://github.com/dangogit/ncode-saas-toolkit-mobile 2>/dev/null
+print_installing "Installing plugin"
+claude plugin install ncode-saas-toolkit-mobile 2>/dev/null && \
   print_done "ncode-saas-toolkit-mobile installed" || \
   print_done "ncode-saas-toolkit-mobile already installed"
 
