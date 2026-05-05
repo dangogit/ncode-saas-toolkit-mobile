@@ -56,13 +56,13 @@ import { I18nManager } from 'react-native';
 I18nManager.allowRTL(true);
 I18nManager.forceRTL(true);
 
-// Conditional icon flip
-const ChevronIcon = () => (
-  <Ionicons
-    name={I18nManager.isRTL ? 'chevron-back' : 'chevron-forward'}
-    size={20}
-  />
-);
+// Conditional icon flip (using Lucide - thin strokes, not chunky Ionicons)
+import { ChevronLeft, ChevronRight } from 'lucide-react-native';
+
+const ChevronIcon = () => {
+  const Icon = I18nManager.isRTL ? ChevronLeft : ChevronRight;
+  return <Icon size={20} strokeWidth={1.5} />;
+};
 
 // RTL-aware NativeWind spacing
 // Use: ms-4 me-4 ps-4 pe-4 start-0 end-0
